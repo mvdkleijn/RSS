@@ -68,7 +68,7 @@ class RssController extends PluginController {
 				$edit_feed = "UPDATE ".TABLE_PREFIX."rss SET `rssname`='".$rssname."',`rssurl`='".$rssurl."' WHERE id='".$id."'";
 				$edit_feed = $__CMS_CONN__->prepare($edit_feed);
 				$edit_feed->execute();
-				Flash::set('success', __('The download has been edited.'));
+				Flash::set('success', __('The feed has been edited.'));
 				redirect(get_url('plugin/rss/index'));
 		}
 	}
