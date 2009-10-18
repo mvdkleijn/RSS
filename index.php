@@ -10,7 +10,7 @@ Plugin::setInfos(array(
 	'website'		=> 'http://www.band-x.org'
 ));	
 
-Plugin::addController('rss', 'RSS');
+Plugin::addController('rss', 'RSS', 'administrator,developer,editor', TRUE);
 
 function rss($id) {
 
