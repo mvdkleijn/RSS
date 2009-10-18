@@ -4,11 +4,7 @@ class RssController extends PluginController {
 
 	public function __construct() {
 		$this->setLayout('backend');
-		if (version_compare(FROG_VERSION, '0.9.5', '<')) {
-			$this->assignToLayout('sidebar', new View('../../../plugins/rss/views/sidebar'));
-		} else {
-			$this->assignToLayout('sidebar', new View('../../plugins/rss/views/sidebar'));
-		}
+		$this->assignToLayout('sidebar', new View('../../plugins/rss/views/sidebar'));
 	}
 	
 	public function index() {

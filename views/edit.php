@@ -1,7 +1,7 @@
 <?php
-global $__FROG_CONN__;
+global $__CMS_CONN__;
 $rss_deeds = "SELECT * FROM ".TABLE_PREFIX."rss WHERE id=".$id."";
-$rss_deeds = $__FROG_CONN__->prepare($rss_deeds);
+$rss_deeds = $__CMS_CONN__->prepare($rss_deeds);
 $rss_deeds->execute();
 
 while($feed = $rss_deeds->fetchObject()) {
