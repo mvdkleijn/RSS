@@ -35,9 +35,9 @@ class RssController extends PluginController {
 			redirect(get_url('plugin/rss/add'));
 		}
 		else {
-			global $__FROG_CONN__;
+			global $__CMS_CONN__;
 			$add_feed = "INSERT INTO ".TABLE_PREFIX."rss (rssname, rssurl) VALUES ('".$rssname."', '".$rssurl."')" ;  
-			$add_feed = $__FROG_CONN__->prepare($add_feed);
+			$add_feed = $__CMS_CONN__->prepare($add_feed);
     	    $add_feed->execute();  
 			Flash::set('success', __('Your RSS Feed has been added'));
 			redirect(get_url('plugin/rss/index'));
@@ -45,9 +45,9 @@ class RssController extends PluginController {
 	}
     
 	function remove($id) {
-		global $__FROG_CONN__;
+		global $__CMS_CONN__;
 		$remove_feed = "DELETE FROM ".TABLE_PREFIX."rss WHERE id='$id'";
-		$remove_feed = $__FROG_CONN__->prepare($remove_feed);
+		$remove_feed = $__CMS_CONN__->prepare($remove_feed);
 		$remove_feed->execute();
 		Flash::set('success', __('This feed has been deleted'));
 		redirect(get_url('plugin/rss/index'));
@@ -64,9 +64,9 @@ class RssController extends PluginController {
 				redirect(get_url('plugin/rss/edit/'.$id));
 		}
 		else {
-				global $__FROG_CONN__;
+				global $__CMS_CONN__;
 				$edit_feed = "UPDATE ".TABLE_PREFIX."rss SET `rssname`='".$rssname."',`rssurl`='".$rssurl."' WHERE id='".$id."'";
-				$edit_feed = $__FROG_CONN__->prepare($edit_feed);
+				$edit_feed = $__CMS_CONN__->prepare($edit_feed);
 				$edit_feed->execute();
 				Flash::set('success', __('The download has been edited.'));
 				redirect(get_url('plugin/rss/index'));
@@ -80,9 +80,9 @@ class RssController extends PluginController {
 			redirect(get_url('plugin/rss/settings/'));
 		}
 		else {
-			global $__FROG_CONN__;
+			global $__CMS_CONN__;
 			$edit_template = "UPDATE ".TABLE_PREFIX."rss_template SET `template`='$template' WHERE id='1'";
-			$edit_template = $__FROG_CONN__->prepare($edit_template);
+			$edit_template = $__CMS_CONN__->prepare($edit_template);
 			$edit_template->execute();
 			FLASH::set('success', __('The template has been edited'));
 			redirect(get_url('plugin/rss/settings/'));
