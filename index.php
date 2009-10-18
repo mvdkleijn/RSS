@@ -4,7 +4,7 @@ Plugin::setInfos(array(
 	'id'			=> 'rss',
 	'title'			=> 'RSS Parser', 
 	'description'	=> 'Parses external RSS feeds and displays on your site', 
-	'version'		=> '0.3',
+	'version'		=> '0.3.0',
 	'update_url'	=> 'http://www.band-x.org/update.xml',
 	'author'		=> 'Andrew Waters',
 	'website'		=> 'http://www.band-x.org'
