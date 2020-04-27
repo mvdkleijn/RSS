@@ -1,3 +1,6 @@
+**Status:** No longer active / archived
+
+
 RSS Plugin for Wolf CMS
 byAndrew Waters
 andrew@band-x.org
